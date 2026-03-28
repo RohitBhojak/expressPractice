@@ -10,6 +10,10 @@ const PORT = 8080;
 app.use("/authors", authorRouter);
 app.use("/books", bookRouter);
 app.use("/", indexRouter);
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(err.statusCode || 500).send(err.message);
+});
 
 app.listen(PORT, (error) => {
   if (error) throw error;
