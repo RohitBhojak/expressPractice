@@ -1,8 +1,17 @@
 const { Router } = require("express");
 
+const links = [
+  { href: "/", text: "Home" },
+  { href: "about", text: "About" },
+];
+
+const users = ["rohit", "rahul", "abhay"];
+
 const indexRouter = Router();
 
-indexRouter.get("/", (req, res) => res.send("All authors"));
+indexRouter.get("/", (req, res) =>
+  res.render("index", { message: "Views with EJS", links: links, users: users }),
+);
 
 indexRouter.get("/about", (req, res) => res.send(`About`));
 

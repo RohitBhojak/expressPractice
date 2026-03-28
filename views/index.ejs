@@ -1,0 +1,16 @@
+<html>
+
+<head>
+  <title>Practice</title>
+  <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <%= message %>
+  <%- include("navbar", {links: links}) %>
+  <% users.map(user => { %>
+  <%- include("user", {user: user})  %>
+  <%}) %>
+</body>
+
+</html>

@@ -19,4 +19,4 @@ bookRouter.post("/:bookId/reserve", (req, res) => {
   res.send(`Book: ${bookId}`);
 });
 
-exports.module = bookRouter;
+module.exports = bookRouter;
